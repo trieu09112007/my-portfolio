@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d0c">
+  <meta name="description" content="Portfolio cá nhân của Huỳnh Quốc Triều - Sinh viên Công nghệ thông tin, định hướng Game Developer.">
+
+  <title>Huỳnh Quốc Triều | Developer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Hiệu ứng nền -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <canvas id="trail" aria-hidden="true"></canvas>
+  <!-- Hiệu ứng nền -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <canvas id="trail" aria-hidden="true"></canvas>
+
+  <!-- Intro Screen -->
+  <section id="intro-screen" aria-label="Welcome">
+    <div class="intro-logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M50 8 L88 30 V70 L50 92 L12 70 V30 Z"
+          fill="none"
+         stroke="#35e6a0"
+         stroke-width="3"
+        />
+        <path
+          d="M32 35 H68 M50 35 V68 M50 68 L68 50"
+         fill="none"
+      stroke="#35e6a0"
+         stroke-width="5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+       />
+     </svg>
+    </div>
+
+    <div class="intro-line"></div>
+
+    <p class="intro-caption">WELCOME TO MY PORTFOLIO</p>
+  </section>
+  <!-- Cài đặt hiệu ứng -->
+  <button id="settingsBtn"
+          type="button"
+          aria-label="Cài đặt hiệu ứng"
+          aria-expanded="false"
+          aria-controls="settings"
+          hidden>
+    ⚙
+  </button>
+
+  <div id="settings" role="dialog" aria-label="Cài đặt hiệu ứng">
+    <h3>VISUAL SETTINGS</h3>
+
+    <label>
+      Pháo giấy khi click
+      <input type="checkbox" data-key="confetti">
+    </label>
+
+    <label>
+      Vầng sáng theo chuột
+      <input type="checkbox" data-key="glow">
+    </label>
+
+    <label>
+      Lấp lánh hai bên trang
+      <input type="checkbox" data-key="sparkle">
+    </label>
+  </div>
+
+  <!-- Nội dung chính -->
+  <main id="content" hidden>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="intro-logo-up">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M50 8 L88 30 V70 L50 92 L12 70 V30 Z"
+            fill="none"
+            stroke="#35e6a0"
+            stroke-width="3"
+          />
+           <path
+            d="M32 35 H68 M50 35 V68 M50 68 L68 50"
+            fill="none"
+            stroke="#35e6a0"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        STUDENT DEVELOPER
+      </div>
+
+      <a href="#contact" class="nav-contact">Liên hệ ↗</a>
+    </nav>
+
+    <!-- Hero -->
+    <header id="home" class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-tag">
+          <span class="status-dot"></span>
+          HELLO WORLD! I'M A DEVELOPER
+        </div>
+
+        <p class="hero-small">XIN CHÀO, MÌNH LÀ</p>
+
+        <h1>
+          Huỳnh Quốc
+          <span>Triều.</span>
+        </h1>
+
+        <h2 class="hero-role">
+          IT Student <span>//</span> Aspiring Game Developer
+        </h2>
+
+        <p class="hero-description">
+          Sinh viên Công nghệ thông tin tại Việt Nam,
+          đang học cách biến những dòng code thành
+          những sản phẩm thực tế.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            Khám phá dự án <span>↗</span>
+          </a>
+
+          <a href="#about" class="btn-secondary">
+            Tìm hiểu về mình
+          </a>
+        </div>
+
+        <div class="hero-info">
+          <div>
+            <span class="info-label">LOCATION</span>
+            <strong>Da Nang, Vietnam</strong>
+          </div>
+
+          <div>
+            <span class="info-label">EDUCATION</span>
+            <strong>Year 2 Student</strong>
+          </div>
+
+          <div>
+            <span class="info-label">DIRECTION</span>
+            <strong>Game Development</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-glow"></div>
+
+        <div class="code-window">
+
+          <div class="window-header">
+            <div class="window-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <span>about_me.cpp</span>
+          </div>
+
+          <div class="code-content">
+            <p><span class="code-purple">#include</span> <span class="code-green">&lt;iostream&gt;</span></p>
+            <p><span class="code-purple">using namespace</span> std;</p>
+            <br>
+
+            <p><span class="code-blue">int</span> main() {</p>
+
+            <p class="indent">
+              <span class="code-purple">string</span> name =
+            </p>
+
+            <p class="indent code-yellow">
+              "Huynh Quoc Trieu";
+            </p>
+
+            <br>
+
+            <p class="indent">
+              <span class="code-purple">string</span> dream =
+            </p>
+
+            <p class="indent code-yellow">
+              "Game Developer";
+            </p>
+
+            <br>
+
+            <p class="indent">
+              cout &lt;&lt; <span class="code-yellow">"Keep learning!"</span>;
+            </p>
+
+            <p class="indent">
+              <span class="code-blue">return</span> 0;
+            </p>
+
+            <p>}</p>
+
+            <br>
+            <p class="code-comment">// Always keep building.</p>
+            <p class="code-comment">// Always keep improving.</p>
+          </div>
+
+          <div class="window-footer">
+            <span>● C++</span>
+            <span>UTF-8</span>
+            <span>Ln 18, Col 1</span>
+          </div>
+
+        </div>
+
+        <div class="floating-card">
+          <span class="floating-icon">✦</span>
+          <div>
+            <strong>Building the future</strong>
+            <small>One line of code at a time.</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="scroll-indicator">
+        SCROLL TO EXPLORE
+        <span>↓</span>
+      </div>
+
+    </header>
+
+    <!-- About -->
+    <section id="about" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">01 / ABOUT</span>
+        <h2>Giới thiệu <span>về mình.</span></h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-main">
+          <span class="card-label">WHO AM I?</span>
+
+          <h3>
+            Không chỉ học cách viết code,
+            mình muốn tạo ra những thứ có thể
+            mang lại trải nghiệm thú vị.
+          </h3>
+
+          <p>
+            Mình thích tìm hiểu cách máy tính xử lý dữ liệu,
+            từ cấu trúc bên trong một chương trình đến cách
+            lưu trữ thông tin trong cơ sở dữ liệu.
+          </p>
+
+          <p>
+            Bên cạnh đó, mình đang cải thiện tiếng Anh
+            để đọc tài liệu kỹ thuật và hướng tới môi trường
+            làm việc quốc tế.
+          </p>
+        </div>
+
+        <div class="about-side">
+
+          <div class="stat-card">
+            <span class="stat-icon">⌘</span>
+            <strong>IT</strong>
+            <small>Information Technology</small>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon">🎮</span>
+            <strong>Game Dev</strong>
+            <small>My future direction</small>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon">∞</span>
+            <strong>Learning</strong>
+            <small>Never stop improving</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">02 / EDUCATION</span>
+        <h2>Học vấn <span>& kiến thức.</span></h2>
+      </div>
+
+      <div class="education-card">
+        <div class="education-icon">🎓</div>
+
+        <div>
+          <span class="card-label">UNIVERSITY</span>
+
+          <h3>
+            Trường Đại học Sư phạm Kỹ thuật
+            - Đại học Đà Nẵng
+          </h3>
+
+          <p>Ngành Công nghệ thông tin</p>
+
+          <div class="education-meta">
+            <span>25T3</span>
+            <span>•</span>
+            <span>Sinh viên năm 2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-subtitle">
+        <span class="card-label">CURRENTLY LEARNING</span>
+        <h3>Những kiến thức mình đang theo đuổi</h3>
+      </div>
+
+      <div class="learning-grid">
+
+        <article class="learning-card">
+          <span class="learning-index">01</span>
+          <h3>Cấu trúc dữ liệu và giải thuật</h3>
+          <p>
+            Danh sách liên kết, ngăn xếp, hàng đợi,
+            cây và cách đánh giá độ phức tạp thuật toán.
+          </p>
+        </article>
+
+        <article class="learning-card">
+          <span class="learning-index">02</span>
+          <h3>Thiết kế cơ sở dữ liệu</h3>
+          <p>
+            Mô hình quan hệ, chuẩn hóa dữ liệu
+            và truy vấn SQL.
+          </p>
+        </article>
+
+        <article class="learning-card">
+          <span class="learning-index">03</span>
+          <h3>Giáo dục quốc phòng và an ninh</h3>
+          <p>
+            Môn học bắt buộc trong chương trình đại học.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">03 / SKILLS</span>
+        <h2>Kỹ năng <span>của mình.</span></h2>
+      </div>
+
+      <p class="section-description">
+        Những công nghệ và kỹ năng mình đã và đang tìm hiểu.
+      </p>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <span class="skill-icon">C</span>
+          <div>
+            <h3>C / C++</h3>
+            <p>Programming fundamentals</p>
+          </div>
+          <span class="skill-status">LEARNING</span>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-icon">#</span>
+          <div>
+            <h3>HTML & CSS</h3>
+            <p>Web structure and styling</p>
+          </div>
+          <span class="skill-status">LEARNING</span>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-icon">SQL</span>
+          <div>
+            <h3>SQL</h3>
+            <p>Database management</p>
+          </div>
+          <span class="skill-status">LEARNING</span>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-icon">EN</span>
+          <div>
+            <h3>English</h3>
+            <p>Technical reading and communication</p>
+          </div>
+          <span class="skill-status">IMPROVING</span>
+        </div>
+
+      </div>
+
+      <p class="skill-note">
+        * Kỹ năng được trình bày theo quá trình học tập,
+        không phải bảng đánh giá trình độ chuyên môn.
+      </p>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">04 / PROJECTS</span>
+        <h2>Dự án <span>của mình.</span></h2>
+      </div>
+
+      <p class="section-description">
+        Một số sản phẩm và ý tưởng mình đang xây dựng.
+      </p>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+
+          <div class="project-top">
+            <span class="project-category">WEB DEVELOPMENT</span>
+            <span class="project-number">01</span>
+          </div>
+
+          <div class="project-preview profile-preview">
+            <div class="preview-window">
+              <div class="preview-line"></div>
+              <div class="preview-title"></div>
+              <div class="preview-line short"></div>
+              <div class="preview-blocks">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <span class="preview-symbol">&lt;/&gt;</span>
+          </div>
+
+          <div class="project-content">
+            <h3>Personal Profile</h3>
+
+            <p>
+              Trang portfolio cá nhân giới thiệu bản thân,
+              kỹ năng, hành trình học tập và các dự án của mình.
+            </p>
+
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="project-card">
+
+          <div class="project-top">
+            <span class="project-category">GAME DEVELOPMENT</span>
+            <span class="project-number">02</span>
+          </div>
+
+          <div class="project-preview game-preview">
+            <div class="game-orbit orbit-one"></div>
+            <div class="game-orbit orbit-two"></div>
+            <div class="game-core">✦</div>
+            <span class="game-label">TOWER DEFENSE</span>
+          </div>
+
+          <div class="project-content">
+            <h3>Tower Defense Game</h3>
+
+            <p>
+              Dự án game cá nhân. Đã lên ý tưởng về lối chơi
+              và cốt truyện, hiện đang trong quá trình phát triển.
+            </p>
+
+            <div class="project-tags">
+              <span>Game Design</span>
+              <span>Gameplay</span>
+              <span>Storytelling</span>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Journey -->
+    <section id="journey" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">05 / JOURNEY</span>
+        <h2>Hành trình <span>lập trình.</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">2025 — 2026</span>
+            <h3>Năm nhất</h3>
+
+            <p>
+              Làm quen với lập trình C, các kiến thức nền tảng
+              và cấu trúc dữ liệu, giải thuật.
+            </p>
+
+            <div class="project-tags">
+              <span>C</span>
+              <span>DSA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker active"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">2026 — PRESENT</span>
+            <h3>Năm hai</h3>
+
+            <p>
+              Bắt đầu xây dựng các dự án cá nhân,
+              tìm hiểu HTML, CSS, SQL và mở rộng
+              kiến thức lập trình.
+            </p>
+
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>SQL</span>
+              <span>Projects</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item future">
+          <div class="timeline-marker"></div>
+
+          <div class="timeline-content">
+            <span class="timeline-date">THE FUTURE</span>
+            <h3>Game Developer</h3>
+
+            <p>
+              Hướng tới phát triển game chuyên nghiệp,
+              tham gia thực tập và xây dựng những sản phẩm
+              có thể tiếp cận cộng đồng game thủ toàn cầu.
+            </p>
+
+            <div class="project-tags">
+              <span>C#</span>
+              <span>Unity</span>
+              <span>Game Development</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Goals -->
+    <section id="goals" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">06 / GOALS</span>
+        <h2>Mục tiêu <span>tương lai.</span></h2>
+      </div>
+
+      <div class="goals-grid">
+
+        <div class="goal-card">
+          <span class="goal-label">SHORT-TERM GOAL</span>
+          <div class="goal-icon">↗</div>
+
+          <h3>Ngắn hạn</h3>
+
+          <p>
+            Cải thiện tiếng Anh để đọc tài liệu kỹ thuật
+            dễ dàng hơn và thực hiện thêm các dự án nhỏ
+            bằng C# và Unity.
+          </p>
+        </div>
+
+        <div class="goal-card highlight-goal">
+          <span class="goal-label">LONG-TERM GOAL</span>
+          <div class="goal-icon">✦</div>
+
+          <h3>Dài hạn</h3>
+
+          <p>
+            Trở thành Game Developer chuyên nghiệp,
+            từng bước xây dựng những tựa game có chất lượng
+            và hướng tới giải thưởng Game of the Year.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Interests -->
+    <section id="interests" class="section">
+
+      <div class="section-heading">
+        <span class="section-number">07 / INTERESTS</span>
+        <h2>Ngoài lập trình, <span>mình còn...</span></h2>
+      </div>
+
+      <div class="interest-list">
+        <span>⌨ Tìm hiểu về Code</span>
+        <span>🎮 Chơi game</span>
+        <span>🎬 Xem Anime</span>
+        <span>♡ Nữ</span>
+      </div>
+
+      <div class="quote-card">
+        <span class="quote-mark">“</span>
+
+        <p>
+          Trước khi tự nhận lỗi về bản thân,
+          tại sao không thử đổ lỗi cho người khác?
+        </p>
+
+        <span class="quote-caption">MY FAVORITE QUOTE</span>
+      </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+
+      <span class="section-number">08 / CONTACT</span>
+
+      <h2>
+        Let's build<br>
+        <span>something great.</span>
+      </h2>
+
+      <p>
+        Nếu bạn có ý tưởng thú vị hoặc muốn trao đổi
+        về lập trình và game development, hãy kết nối với mình.
+      </p>
+
+      <div class="contact-links">
+
+        <a href="mailto:trieu09112007@gmail.com">
+          <span>Email</span>
+          <span>↗</span>
+        </a>
+
+        <a href="https://github.com/trieu09112007-cyber" target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
+          <span>↗</span>
+        </a>
+
+        <a href="https://www.youtube.com/@pro_max_gm7813" target="_blank" rel="noopener noreferrer">
+          <span>YouTube</span>
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>
+        TRIỀU<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <p>Designed & Built by Huỳnh Quốc Triều</p>
+
+      <span class="footer-copy">© 2026 ALL RIGHTS RESERVED</span>
+
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
